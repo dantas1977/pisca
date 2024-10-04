@@ -248,7 +248,7 @@ function showQuestion() {
     const container4 = document.querySelector('.container-4');
     container4.innerHTML = ''; // Limpa o container antes de adicionar a nova imagem
     const img = document.createElement('img');
-    img.src = `imagens/${question.imagem}`;
+    img.src = `${question.imagem}`;
     img.alt = question.descricao;
     img.id = 'mainImage';
 
