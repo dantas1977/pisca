@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template de Margens Fixas</title>
+    <link rel="stylesheet" href="style_v2.css">
+</head>
+<body>
+    <div id="main-container"> <!-- Main Container -->
+        <div class="container-1">
+            <div class="container-3" id="question"></div>
+            <div class="container-4" id="subcontainer4">
+                <!-- Imagem principal -->
+                <img id="mainImage" src="imagens/nome_da_imagem.jpg" usemap="#image-map">
+                <!-- Mapa da imagem -->
+                <map name="image-map" id="image-map"></map>
+            </div>
+            <div class="container-5"></div>
+        </div>
+        <div class="container-2">
+            <!-- Botões de resposta adicionados dinamicamente com JavaScript -->
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+        </div>
+    </div>
+<!-- Modal personalizado -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modal-message">Sua pontuação foi X/X</p>
+    <button id="restartBtn">Reiniciar</button>
+    <button id="exitBtn">Sair</button>
+  </div>
+</div>
+<div id="assuntoModal" class="modal">
+    <div class="modal-content">
+        <h2>Escolha a matéria:</h2>
+        <div id="assunto-list" class="modal-scrollable">
+            <!-- Subject and sub-subject checkboxes will be dynamically generated here -->
+        </div>
+        <div class="modal-buttons">
+            <button id="confirmarBtn">Confirmar</button>
+            <button id="sairBtn">Sair</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script_v2.js"></script>
+</body>
+</html>

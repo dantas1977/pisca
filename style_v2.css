@@ -1,0 +1,415 @@
+/* Reset básico para margens e preenchimentos padrão do navegador */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos globais para <h1> */
+h1 {
+    font-family: 'Arial', sans-serif; /* Define a família de fontes */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    line-height: 1.2; /* Altura da linha */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    text-align: left; /* Alinhamento do texto */
+}
+
+/* Estilos globais para <h2> */
+h2 {
+    font-family: 'Arial', sans-serif; /* Define a família de fontes */
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: normal; /* Peso da fonte */
+    color: #555; /* Cor do texto */
+    line-height: 1.3; /* Altura da linha */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    text-align: left; /* Alinhamento do texto */
+}
+
+
+/* Main Container ocupa toda a área útil da tela */
+#main-container {
+    width: 100%;
+    border: 2px solid orange;
+    box-sizing: border-box; /* Inclui borda na largura e altura total */
+    position: relative; /* Relativo para posicionamento dos filhos */
+    display: flex;
+}
+
+/* Contêiner 1 - Azul */
+.container-1 {
+    border: 2px solid blue;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+/* Contêiner 2 - Vermelho */
+.container-2 {
+    border: 2px solid red;
+    box-sizing: border-box;
+    margin: 0;
+    flex-grow: 1; /* Garante que o container 2 ocupe todo o espaço restante */
+}
+
+/* Contêiner 3 - Roxo */
+.container-3 {
+    border: 2px solid purple;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+/* Contêiner 4 - Amarelo */
+.container-4 {
+    position: relative;
+    border: 2px solid yellow;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    flex-grow: 1; /* Faz o container 4 ocupar o espaço adequado */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Para garantir que não haja barras de rolagem */
+}
+
+/* Estilo para a imagem dentro do container-4 */
+.container-4 img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+
+}
+
+/* Contêiner 5 - Verde */
+.container-5 {
+    border: 2px solid green;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    flex-grow: 1; /* Faz o container 5 ocupar todo o espaço restante */
+}
+
+/* Layout para celulares em portrait */
+@media (orientation: portrait) {
+    #main-container {
+        height: calc(100vh - 13vh); /* Altura total menos a margem fixa para portrait */
+        flex-direction: column; /* Coloca os filhos na vertical */
+    }
+
+    .container-1 {
+        width: 100%;
+        height: calc(66.67% - 4px); /* 2/3 da altura do main container menos espessura da borda */
+    }
+
+    .container-2 {
+        width: 100%;
+        height: calc(33.33% - 4px); /* 1/3 da altura do main container menos espessura da borda */
+    }
+
+    .container-3 {
+        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-4 {
+        height: calc(70% - 4px); /* 70% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-5 {
+        /* Removida a altura fixa para permitir o flex-grow */
+    }
+}
+
+/* Layout para celulares em landscape */
+@media (orientation: landscape) {
+    #main-container {
+        height: calc(100vh - 28vh); /* Altura total menos a margem fixa para landscape */
+        flex-direction: row; /* Coloca os filhos na horizontal */
+    }
+
+    .container-1 {
+        height: 100%;
+        width: calc(66.67% - 4px); /* 2/3 da largura do main container menos espessura da borda */
+    }
+
+    .container-2 {
+        height: 100%;
+        width: calc(33.33% - 4px); /* 1/3 da largura do main container menos espessura da borda */
+    }
+
+    .container-3 {
+        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-4 {
+        height: calc(70% - 4px); /* 70% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-5 {
+        /* Removida a altura fixa para permitir o flex-grow */
+    }
+}
+
+
+/* Ajuste para landscape - dispositivos móveis */
+@media (orientation: landscape) and (max-width: 768px) {
+    #assuntoModal .modal-content {
+        max-height: 80vh; /* Maior altura para permitir o conteúdo caber */
+        width: 90%; /* Ocupa mais da largura da tela no landscape */
+        overflow-y: auto; /* Permitir rolagem vertical dentro do modal */
+    }
+
+    #assuntoModal .modal-scrollable {
+        max-height: 70vh; /* Ajusta a altura máxima do conteúdo rolável */
+    }
+
+    /* Certifique-se de que o body permita scroll quando necessário */
+    body, html {
+        overflow-y: auto;
+    }
+}
+
+/* Ajuste para telas pequenas como celulares */
+@media only screen and (max-width: 768px) {
+    #assuntoModal {
+        width: 90%; /* Aumenta a largura para dispositivos móveis */
+        
+    }
+}
+
+/* Layout para tela de computador */
+@media (min-width: 1025px) {
+    #main-container {
+        height: calc(100vh - 6vh); /* Altura total menos a margem fixa para tela de computador */
+        flex-direction: row; /* Coloca os filhos na horizontal */
+    }
+
+    .container-1 {
+        height: 100%;
+        width: calc(66.67% - 4px); /* 2/3 da largura do main container menos espessura da borda */
+    }
+
+    .container-2 {
+        height: 100%;
+        width: calc(33.33% - 4px); /* 1/3 da largura do main container menos espessura da borda */
+    }
+
+    .container-3 {
+        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-4 {
+        height: calc(70% - 4px); /* 70% da altura do container 1 menos espessura da borda */
+    }
+
+    .container-5 {
+        /* Removida a altura fixa para permitir o flex-grow */
+    }
+}
+
+/* Estilos para o container-2 com os botões */
+.container-2 {
+    border: 2px solid red;
+    box-sizing: border-box;
+    margin: 0;
+    flex-grow: 1; /* Garante que o container 2 ocupe todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza os botões verticalmente */
+    align-items: center; /* Centraliza os botões horizontalmente */
+}
+
+/* Estilo para os botões */
+.answer-button {
+    width: 80%; /* Largura dos botões */
+    padding: 10px;
+    margin-bottom: 10px; /* Espaçamento entre os botões */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Para o shape rect: piscar de amarelo para amarelo claro */
+@keyframes blink-rect {
+    0% { background-color: yellow; }
+    50% { background-color: lightyellow; }
+    100% { background-color: yellow; }
+}
+
+.rect-blink {
+    animation: blink-rect 0.5s infinite;
+}
+
+
+.blinking-area {
+    animation: blink 0.5s infinite;
+    position: absolute; /* Ensure the blinking area overlays properly */
+    background-color: rgba(255, 255, 0, 0.5); /* Yellowish color */
+}
+
+/* Modal de Score - Container */
+#modal {
+  display: none; /* Oculto inicialmente */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal de Score - Conteúdo */
+#modal .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; /* Largura ajustável */
+  max-width: 400px; /* Limite de largura */
+  max-height: 60vh; /* Limite de altura */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-message {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#modal button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#restartBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#exitBtn {
+  background-color: #f44336;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  #modal .modal-content {
+    width: 90%;
+    max-height: 70vh;
+  }
+}
+
+
+
+
+/* Style for the assuntoModal */
+#assuntoModal {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    height: 100%; /* Ocupa toda a altura */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro cobrindo toda a tela */
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal container */
+#assuntoModal .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%; /* Para dispositivos móveis */
+    max-width: 500px; /* Largura máxima para desktops */
+    height: 60vh; /* Altura fixa de 60vh */
+    overflow: hidden; /* Evita que o modal role */
+}
+
+/* Ajuste para landscape - dispositivos móveis */
+@media (orientation: landscape) and (max-width: 768px) {
+    #assuntoModal {
+        width: 100%; /* Usa largura da viewport no landscape */
+        height: 100%; /* Usa altura da viewport no landscape */
+    }
+}
+
+/* Ajuste para portrait - dispositivos móveis */
+@media (orientation: portrait) and (max-width: 768px) {
+    #assuntoModal {
+        width: 100%; /* Usa a largura da viewport no portrait */
+        height: 100%; /* Usa a altura da viewport no portrait */
+    }
+}
+
+
+/* Conteúdo do texto (scrollable) */
+.modal-scrollable {
+    overflow-y: auto;
+    flex-grow: 1; /* Faz com que o conteúdo de texto ocupe o espaço disponível */
+    max-height: 45vh; /* Altura máxima do conteúdo rolável */
+    padding-bottom: 10px;
+}
+
+/* Botões fixos no fundo */
+.modal-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 20px; /* Controla o espaçamento entre os botões */
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ddd; /* Separador superior */
+    margin-top: 10px; /* Espaço entre o conteúdo e os botões */
+}
+
+/* Estilo dos botões */
+#confirmarBtn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sairBtn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Ajuste para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    #assuntoModal .modal-content {
+        width: 90%; /* Aumenta a largura para dispositivos móveis */
+    }
+}
