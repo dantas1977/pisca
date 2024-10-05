@@ -1,10 +1,57 @@
-/* Reset básico para margens e preenchimentos padrão do navegador */
-body, html {
+/* Mantendo o reset de margens e preenchimentos para html e body */
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+    font-size: 1.25rem; /* Aumentando o tamanho base (1.25rem = 20px) */
+    line-height: 1.6; /* Altura da linha */
+    color: #333;
 }
+
+/* Estilos para elementos */
+h1 {
+    font-size: 2.5rem; /* Maior para o título principal */
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.25rem; /* Aumentado para parágrafos */
+}
+
+/* Tamanhos responsivos */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem; /* 1rem = 16px para telas menores */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.875rem; /* 0.875rem = 14px para telas pequenas */
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
 
 /* Estilos globais para <h1> */
 h1 {
@@ -57,43 +104,56 @@ h2 {
     flex-grow: 1; /* Garante que o container 2 ocupe todo o espaço restante */
 }
 
-/* Contêiner 3 - Roxo */
+/* Contêiner 3 - Ajustável pelo conteúdo de texto */
 .container-3 {
     border: 2px solid purple;
     box-sizing: border-box;
-    width: 100%;
-    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: justify; /* Justifica o texto */
+    padding: 0.5rem; /* Padding mínimo para dar espaço ao texto */
+    height: auto; /* Faz o container crescer com o conteúdo */
+    overflow: hidden; /* Garante que o texto não transborde */
+    width: 100%; /* Ocupa toda a largura */
 }
 
-/* Contêiner 4 - Amarelo */
+
+
+/* Container-4 (a caixa amarela) */
 .container-4 {
-    position: relative;
+    display: flex; /* Habilita o flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
     border: 2px solid yellow;
-    box-sizing: border-box;
     width: 100%;
+    height: 100%;
     margin: 0;
-    flex-grow: 1; /* Faz o container 4 ocupar o espaço adequado */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Para garantir que não haja barras de rolagem */
+    flex-grow: 1;
+    overflow: hidden;
 }
 
-/* Estilo para a imagem dentro do container-4 */
+/* A imagem dentro do container-4 */
 .container-4 img {
     max-width: 100%;
     max-height: 100%;
     display: block;
-    margin: auto;
-
+    margin: auto; /* Centraliza horizontalmente, mas o flexbox também vai garantir isso */
 }
+
 
 /* Contêiner 5 - Verde */
 .container-5 {
     border: 2px solid green;
     box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    flex-grow: 1; /* Faz o container 5 ocupar todo o espaço restante */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: justify; /* Justifica o texto */
+    padding: 0.5rem; /* Padding mínimo para dar espaço ao texto */
+    height: auto; /* Faz o container crescer com o conteúdo */
+    overflow: hidden; /* Garante que o texto não transborde */
+    width: 100%; /* Ocupa toda a largura */
 }
 
 /* Layout para celulares em portrait */
@@ -114,8 +174,9 @@ h2 {
     }
 
     .container-3 {
-        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    max-height: 30%; /* Define um máximo de 30% da altura total */
     }
+
 
     .container-4 {
         height: calc(70% - 4px); /* 70% da altura do container 1 menos espessura da borda */
@@ -144,7 +205,7 @@ h2 {
     }
 
     .container-3 {
-        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    max-height: 30%; /* Define um máximo de 30% da altura total */
     }
 
     .container-4 {
@@ -201,7 +262,7 @@ h2 {
     }
 
     .container-3 {
-        height: calc(15% - 4px); /* 15% da altura do container 1 menos espessura da borda */
+    max-height: 30%; /* Define um máximo de 30% da altura total */
     }
 
     .container-4 {
